@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investigacion Operativa I</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sistema en Línea para Resolver el Problema de la Ruta Más Corta</h1>
+
+    <div class="graph-section">
+      <label for="graph-data">Ingresa los datos del grafo (matriz de adyacencia):</label>
+      <textarea id="graph-data" placeholder="Ejemplo:
+0 4 0 0 0
+4 0 8 0 0
+0 8 0 7 0
+0 0 7 0 9
+0 0 0 9 0"></textarea>
+    </div>
+
+    <div class="graph-section">
+      <label for="node-names">Nombres de los nodos (separados por comas):</label>
+      <input id="node-names" placeholder="Ejemplo: A,B,C,D,E">
+    </div>
+
+    <div class="graph-section">
+      <label for="start-node">Nodo de inicio:</label>
+      <input type="number" id="start-node" min="0" placeholder="0">
+    </div>
+
+    <div class="graph-section">
+      <label for="end-node">Nodo final:</label>
+      <input type="number" id="end-node" min="0" placeholder="4">
+    </div>
+
+    <div class="graph-section">
+      <button onclick="drawInitialGraph()">Dibujar Grafo</button>
+    </div>
+
+    <canvas id="graphCanvas" width="1000" height="600"></canvas>
+
+    <div class="output-section">
+      <button onclick="findShortestPath()">Encontrar Ruta Más Corta</button>
+      <div id="output"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
